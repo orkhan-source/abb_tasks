@@ -1,7 +1,10 @@
 package DAO;
 
+import FileStuff.FamilySaver;
+import FileStuff.Logging;
 import Humans.Family;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +24,10 @@ public class CollectionFamilyDao implements FamilyDao{
     public boolean deleteFamily(int index) {
         if(families.contains(families.get(index))){
             families.remove(index);
+            Logging.info(LocalDate.now() + "[DEBUG]");
             return true;
         }
+        Logging.error("[ERROR]");
         return false;
     }
 
@@ -30,8 +35,10 @@ public class CollectionFamilyDao implements FamilyDao{
     public boolean deleteFamily(Family family) {
         if(families.contains(family)){
             families.remove(family);
+            Logging.info(LocalDate.now() + "[DEBUG]");
             return true;
         }
+        Logging.error("[ERROR]");
         return false;
     }
 
@@ -44,5 +51,16 @@ public class CollectionFamilyDao implements FamilyDao{
         else{
             families.add(family);
         }
+        Logging.info(LocalDate.now() + "[DEBUG]");
+    }
+
+    @Override
+    public List<Family> loadData() {
+        return FamilySaver.loadData();
+    }
+
+    @Override
+    public void saveData(List<Family> families){
+        FamilySaver.saveData(families);
     }
 }
