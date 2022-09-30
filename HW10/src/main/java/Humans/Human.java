@@ -28,20 +28,20 @@ public class Human {
 
     }
 
-    public Human(String name, String surname, long birthDate){
-        setName(name);
-        setSurname(surname);
-        setBirthDate(birthDate);
+    public Human(String name, String surname, String birthDate){
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = DateUtil.dateStrToUnix(birthDate);
     }
 
 
-    public Human(String name, String surname, long birthDate, int iq, Pet pet, Map<DayOfWeek, String[]> schedule){
-        setName(name);
-        setSurname(surname);
-        setBirthDate(birthDate);
-        setIq(iq);
-        setPet(pet);
-        setSchedule(schedule);
+    public Human(String name, String surname, String birthDate, int iq, Pet pet, Map<DayOfWeek, String[]> schedule){
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = DateUtil.dateStrToUnix(birthDate);
+        this.iq = iq;
+        this.pet = pet;
+        this.schedule = schedule;
     }
 
     public Human(String name, String surname, String birthDate, int iq)  {
