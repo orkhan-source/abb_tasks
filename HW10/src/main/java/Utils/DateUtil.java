@@ -26,11 +26,16 @@ public class DateUtil {
     }
 
     public static String dateUnixToStr(long birthDate)  {
-        String dateFormat = "dd/MM/yyyy";
-        DateTimeFormatter sdf = DateTimeFormatter.ofPattern(dateFormat);
         Date dt = new Date(birthDate);
-        LocalDate ldt = convertDateToLocal(dt);
-        String a = ldt.format(sdf);
+        String dateFormat = "dd/MM/yyyy";
+        String a = "";
+        try{
+            DateTimeFormatter sdf = DateTimeFormatter.ofPattern(dateFormat);
+            LocalDate ldt = convertDateToLocal(dt);
+            a = ldt.format(sdf);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         return a;
     }
 

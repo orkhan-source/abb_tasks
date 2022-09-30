@@ -51,6 +51,7 @@ public class CollectionFamilyDao implements FamilyDao{
         else{
             families.add(family);
         }
+
         Logging.info(LocalDate.now() + "[DEBUG]");
     }
 

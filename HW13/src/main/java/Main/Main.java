@@ -22,7 +22,9 @@ public class Main {
 
         FamilyController familyController = new FamilyController(new FamilyService(new CollectionFamilyDao()));
 
+
         /*
+
         Human laurasMother = new Human("Jane", "Boff", 1972);
         Human laurasFather = new Human("Alex", "Boff", 1970);
 
@@ -46,14 +48,16 @@ public class Main {
         Human childofDean1 = new Human("bb", "Dean", 2000);
         Human childofDean2 = new Human("cc", "Dean", 1998);
 
+
         familyController.deleteAllChildrenOlderThen(20);
         System.out.println(familyController.count());
 
+
         Human h1 = new Human("a", "b", "20/03/2016", 33);
         System.out.println(h1.describeAge());
+        */
 
 
-         */
 
 
 

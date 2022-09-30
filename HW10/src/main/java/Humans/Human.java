@@ -124,19 +124,9 @@ public class Human {
     }
 
     @Override
-    public String toString()  {
-
-        String dateFormat = "dd/MM/yyyy";
-        DateTimeFormatter sdf = DateTimeFormatter.ofPattern(dateFormat);
-        Date dt = new Date(birthDate);
-        LocalDate ldt = DateUtil.convertDateToLocal(dt);
-        String birthDateStr = ldt.format(sdf);
-
-        return "Human{name = '" + this.name + "', surname = '" + this.surname + "', year = " +
-                DateUtil.dateUnixToStr(this.birthDate) +
-                ", iq = " + this.iq  + ", Birthdate = "  + birthDateStr + "}";
+    public String toString() {
+        return String.format("Human{ name = %s, surname = %s, birthDate = %s, iq= %d }", name, surname, DateUtil.dateUnixToStr(birthDate), iq);
     }
-
 
     @Override
     public boolean equals(Object o){
