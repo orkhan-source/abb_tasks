@@ -56,7 +56,7 @@ public class FamilyService {
         Random rand = new Random();
 
         String name = rand.nextBoolean() ? masculine : feminine;
-        Human child = new Human(name, family.getFather().getSurname(), calendar.get(Calendar.YEAR));
+        Human child = new Human(name, family.getFather().getSurname(), "20/06/2006");
         family.addChild(child);
         familyDao.saveFamily(family);
         return family;

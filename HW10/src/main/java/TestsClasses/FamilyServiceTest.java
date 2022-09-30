@@ -19,8 +19,8 @@ public class FamilyServiceTest {
 
     @Test
     void getAllFamiliesTest(){
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         assertEquals(familyService.count(), 1);
     }
@@ -29,8 +29,8 @@ public class FamilyServiceTest {
     @Test
     void getFamiliesBiggerThanTest(){
 
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         Human laura = new Human();
         boff.addChild(laura);
@@ -39,8 +39,8 @@ public class FamilyServiceTest {
 
     @Test
     void createNewFamily(){
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
 
         assertEquals(familyService.count(), 1);
@@ -48,8 +48,8 @@ public class FamilyServiceTest {
 
     @Test
     void bornChild(){
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         boff = familyService.bornChild(boff, "Alexx", "Laura");
         assertEquals(familyService.countFamiliesWithMemberNumber(3), 1);
@@ -58,8 +58,8 @@ public class FamilyServiceTest {
     @Test
     void adoptChildTest(){
 
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         Human laura = new Human();
         familyService.adoptChild(boff, laura);
@@ -70,8 +70,8 @@ public class FamilyServiceTest {
 
     @Test
     void getFamilyByIdTest(){
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         assertEquals(boff, familyService.getFamilyById(0));
     }
@@ -79,8 +79,8 @@ public class FamilyServiceTest {
 
     @Test
     void getPetTest(){
-        Human laurasMother = new Human("Jane", "Boff", 1972);
-        Human laurasFather = new Human("Alex", "Boff", 1970);
+        Human laurasMother = new Human("Jane", "Boff", "10/01/1970");
+        Human laurasFather = new Human("Alex", "Boff", "10/01/1970");
         Family boff = familyService.createNewFamily(laurasFather, laurasMother);
         Set<Pet> boffPet = new HashSet<>(Arrays.asList(new Dog("rex")));
         boff.setPets(boffPet);
